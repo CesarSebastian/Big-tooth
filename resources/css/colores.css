@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+body {background-color: #e3f2fd}
+header, button.default  {background-color: #00A6FF}
+legend, label {color: #00A6FF}
+.contenido a, footer a {color: #ffab00}
+input[type='text']:focus, input[type='password']:focus {
+  border-bottom-color: #ffab00
+}
+.fab {background-color: #ffab00}
+#panelDeSesion {background-color: #FF6440}
+.maestro .elemento a {color: #212121}
+footer {background-color: black}
+.contenido {background-color: #fafafa}
+.navegacion, .navegacion .cajon, .maestro .contenido, .reporte .contenido {
+  background-color: white
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Copyright 2016 Gilberto Pacheco Gallegos
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+  this file except in compliance with the License. You may obtain a copy of the
+  License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software distributed
+  under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+  CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+  language governing permissions and limitations under the License. -->
+<!-- Esta es una plantilla. Las páginas del sitio la utilizan para no escribir
+varias veces el código que se repite en las página de la aplicación. Las partes
+del sitio que no se parecen, se indican con variables y con elementos insert,
+que deben ser proporcionados por las páginas que usan esta plantilla y son
+llamadas páginas clientes. -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:ezcomp="http://xmlns.jcp.org/jsf/composite/ezcomp">
+  <h:head>
+    <meta charset="UTF-8" />
+    <!-- El valor de la variable título debe ser proporcionado por la página
+    cliente. -->
+    <title>#{título}</title>
+    <ezcomp:head/>
+    <link jsf:name="css/colores.css"/>
+    <link jsf:name="css/comun.css"/>
+    <link jsf:name="css/detalle.css"/>
+    <script jsf:name="js/libs/util.js"></script>
+    <script jsf:name="js/libs/ProxyCtrlAbcRest.js"></script>
+    <script jsf:name="js/libs/MedDetalle.js"></script>
+  </h:head>
+  <h:body>
+    <main class="detalle">
+      <form id="forma" action="javascript:;">
+        <!-- Esta sección se puede cambiar añadiende la definición con nombre
+        "herramientas" en la página cliente; si se omite, se inserta el contenido
+        definido aquí.-->
+        <ui:insert name="herramientas">
+          <header style="padding-left: 0">
+            <ezcomp:botonIconico id="cancelar" accesskey="C" title="Cancelar">
+              <ezcomp:iconoMaterial>close</ezcomp:iconoMaterial>
+            </ezcomp:botonIconico>
+            <h1>#{título}</h1>
+            <ezcomp:botonIconico id="eliminar" accesskey="E" title="Eliminar">
+              <ezcomp:iconoMaterial>delete</ezcomp:iconoMaterial>
+            </ezcomp:botonIconico>
+            <ezcomp:fab id="fab" accesskey="G" title="Guardar">
+              <ezcomp:iconoMaterial>save</ezcomp:iconoMaterial>
+            </ezcomp:fab>
+          </header>
+        </ui:insert>
+        <section class="centro">
+          <section class="contenido">
+            <ezcomp:indicador id="indicador"/>
+            <ezcomp:error id="error"/>
+            <!-- Esta sección se puede cambiar añadiende la definición con nombre
+            "contenido" en la página cliente; si se omite, no se inserta nada. -->
+            <ui:insert name="contenido"/>
+          </section>
+          <ezcomp:footer/>
+        </section>
+      </form>
+    </main>
+    <ui:insert name="scripts"/>
+  </h:body>
+</html>

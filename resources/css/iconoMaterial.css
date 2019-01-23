@@ -1,0 +1,43 @@
+/* Copyright 2016 Gilberto Pacheco Gallegos Licensed under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License. */
+@CHARSET "UTF-8";
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'),
+    /* Chrome 26+, Opera 23+ */
+    url(#{resource['fonts/MaterialIcons-Regular.woff2']}) format('woff2'),
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url(#{resource['fonts/MaterialIcons-Regular.woff']}) format('woff');
+}
+.iconoMaterial {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Tamaño preferido de los íconos. */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Soporte para todos los navegadores WebKit. */
+  -webkit-font-smoothing: antialiased;
+  /* Soporte para Safari y Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Soporte para Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Soporte para IE. */
+  font-feature-settings: 'liga';
+}

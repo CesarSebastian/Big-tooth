@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Copyright 2016 Gilberto Pacheco Gallegos
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+  this file except in compliance with the License. You may obtain a copy of the
+  License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software distributed
+  under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+  CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+  language governing permissions and limitations under the License. -->
+<!-- Plantilla para el inicio de sesión. Las páginas del sitio la utilizan para
+no escribir varias veces el código que se repite en las página de la aplicación.
+Las partes del sitio que no se parecen, se indican con variables y con elementos
+insert, que deben ser proporcionados por las páginas que usan esta plantilla y
+son llamadas páginas clientes. -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ezcomp="http://xmlns.jcp.org/jsf/composite/ezcomp">
+  <h:head>
+    <meta charset="UTF-8" />
+    <!-- El valor de la variable título debe ser proporcionado por la página
+    cliente. -->
+    <title>#{título}</title>
+    <ezcomp:head/>
+    <link jsf:name="css/inicio.css"/>
+  </h:head>
+  <h:body>
+    <main class="inicio">
+      <header><h1>#{título}</h1></header>
+      <section class="centro">
+        <section class="contenido">
+          <!-- Cuando un insert no lleva name, toma el contenido del composite. -->
+          <ui:insert />
+        </section>
+        <ezcomp:footer/>
+      </section>
+    </main>
+  </h:body>
+</html>

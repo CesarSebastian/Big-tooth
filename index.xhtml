@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:ezcomp="http://xmlns.jcp.org/jsf/composite/ezcomp"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+  <ui:param name="título" value="Big Tooth"/>
+  <h:head>
+    <title>#{título}</title>
+    <link rel="manifest" href="#{resource['manifest.json']}"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <link rel="icon" sizes="192x192"
+          href="#{resource['img/icon.png']}"/>
+
+    <!-- Configuración para el ícono de acceso directo en Safari. -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="#{título}"/>
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="#{resource['img/ic_launcher_144px.png']}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="img/ic_launcher_144px.png"/>
+
+    <!-- Configuración para el ícono de acceso directo en Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="#{resource['img/ic_launcher_144px.png']}"/>
+    <meta name="msapplication-TileColor" content="#2196F3"/>
+    <ezcomp:head/>
+    <link jsf:name="css/columnas.css" />
+    <link jsf:name="css/informativo.css" />
+  </h:head>
+  <h:body>
+    <main class="informativo">
+      <header><h1>#{título}</h1></header>
+      <section class="centro">
+        <section class="contenido columnas">
+          <ezcomp:columna>
+            <p style="text-align: center">
+              <img alt="#{título}" style="max-width: 100%"
+                   jsf:name="img/bigtooth2.png"/>
+            </p>
+          <h3>Consultorio Dentista.</h3>
+          <p>Cuenta con los mejores servicios de Odontología de México.</p>
+          </ezcomp:columna>
+        </section>
+        <ezcomp:footer/>
+      </section>
+    </main>
+    <ezcomp:navegacion/>
+  </h:body>
+</html>

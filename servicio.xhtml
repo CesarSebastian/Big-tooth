@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ezcomp="http://xmlns.jcp.org/jsf/composite/ezcomp">
+  <body>
+    <ui:composition template="/WEB-INF/plantillas/detalle.xhtml">
+      <ui:param name="título" value="Servicio Nuevo"/>
+      <ui:define name="contenido">
+        <ezcomp:columnaDeDetalle>
+          <ezcomp:campoNombre name="prov_nombre"/>
+          <ezcomp:campoTexto label="Descripción" name="descripcion_servicio"/>
+          <ezcomp:campoTexto name="costo_servicio" label="Precio" accesskey="R" maxlength="12"/>
+        </ezcomp:columnaDeDetalle>
+      </ui:define>
+      <ui:define name="scripts">
+        <script jsf:name="js/MedServicio.js" jsf:target="head"></script>
+        <script>
+          new MedServicio(document, getParametrosSearch()["id"],
+              "servicios.xhtml", new ProxyCtrlAbcRest("ctrlServicios"))
+              .inicia();
+        </script>
+      </ui:define>
+    </ui:composition>
+  </body>
+</html>

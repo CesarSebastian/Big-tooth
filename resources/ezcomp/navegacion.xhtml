@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<!-- Copyright 2016 Gilberto Pacheco Gallegos
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+  this file except in compliance with the License. You may obtain a copy of the
+  License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software distributed
+  under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+  CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+  language governing permissions and limitations under the License. -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ezcomp="http://xmlns.jcp.org/jsf/composite/ezcomp">
+  <cc:interface shortDescription="Menú de navegación e información de usuario."/>
+  <cc:implementation>
+    <link jsf:name="css/navegacion.css"/>
+    <script jsf:name="js/libs/util.js" jsf:target="head"></script>
+    <script jsf:name="js/libs/ProxyCtrlAbcRest.js" jsf:target="head"></script>
+    <script jsf:name="js/MedSesion.js" jsf:target="head"></script>
+    <aside id="#{cc.id}" class="navegacion">
+      <ezcomp:botonIconico id="menu" accesskey="M" title="Menú">
+        <ezcomp:iconoMaterial>menu</ezcomp:iconoMaterial>
+      </ezcomp:botonIconico>
+      <section class="cajon">
+        <section id="panelDeSesion">
+          <img id="avatarDeSesion" src="" alt="" width="64" height="64"/>
+          <img id="marco_avatar" jsf:name="img/marco_avatar.png" alt=""
+               width="64" height="64"/>
+          <section id="controlDeSesion">
+            <div id="nombreDeSesion"></div>
+            <select id="terminarSesion">
+              <option id="claveDeSesion" value="usuario"></option>
+              <option value="terminar">Terminar Sesión</option>
+            </select>
+          </section>
+        </section>
+        <ezcomp:indicador id="indicadorSesion"/>
+        <nav>
+          <ul>
+            <li><a jsf:outcome="index">Inicio</a></li>
+            <li><a jsf:outcome="servicios">Servicios</a></li>
+          </ul>
+        </nav>
+      </section>
+    </aside>
+    <script>
+      new MedSesion(busca(document, "##{cc.id}"),
+          new ProxyCtrlAbcRest("ctrlSesion")).inicia();
+    </script>
+  </cc:implementation>
+</html>

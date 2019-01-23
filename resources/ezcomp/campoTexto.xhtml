@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<!-- Copyright 2016 Gilberto Pacheco Gallegos
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+  this file except in compliance with the License. You may obtain a copy of the
+  License at
+      http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software distributed
+  under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+  CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
+  language governing permissions and limitations under the License. -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+  <cc:interface shortDescription="Campo de captura avanzado con etiqueta.">
+    <cc:attribute name="name" required="true" type="java.lang.String"
+                  shortDescription="id y name del campo de texto."/>
+    <cc:attribute name="label" required="false" type="java.lang.String"
+                  shortDescription="Texto de la etiqueta."/>
+    <cc:attribute name="type" default="text" type="java.lang.String"
+                  shortDescription="Tipo de input."/>
+    <cc:attribute name="maxlength" default="255" type="java.lang.String"
+                  shortDescription="Máxima cantidad de caracteres permitida."/>
+    <cc:attribute name="accesskey" required="false" type="java.lang.String"
+                  shortDescription="Tecla de acceso."/>
+  </cc:interface>
+  <cc:implementation>
+    <link jsf:name="css/campo.css"/>
+    <p>
+      <label for="#{cc.attrs.name}" accesskey="#{cc.attrs.accesskey}">
+        #{cc.attrs.label}
+      </label>
+      <input type="#{cc.attrs.type}" id="#{cc.attrs.name}"
+             name="${cc.attrs.name}" maxlength="#{cc.attrs.maxlength}"/>
+    </p>
+  </cc:implementation>
+</html>

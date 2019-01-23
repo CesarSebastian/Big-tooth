@@ -1,0 +1,110 @@
+/* Copyright 2016 Gilberto Pacheco Gallegos Licensed under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License. */
+@CHARSET "UTF-8";
+.navegacion {
+  -webkit-order: -1;
+  order: -1;
+  width: 15em;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+#menu {
+  display: none;
+  margin: 16px 8px
+}
+.navegacion .cajon {
+  -webkit-flex: 1;
+  flex: 1;
+  list-style: none;
+  overflow: auto
+}
+.navegacion nav {
+  padding: 0.5em;    
+  background-color: white
+}
+.navegacion ul {
+  list-style: none;
+  padding: 0
+}
+.navegacion li {padding: 8px 32px}
+#panelDeSesion {
+  position: relative;
+  height: 120px
+}
+#avatarDeSesion {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 6;
+}
+#marco_avatar {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 7;
+}
+#controlDeSesion {
+  position: absolute;
+  top: 80px;
+  left: 8px;
+  right: 8px
+}
+#nombreDeSesion {font-weight: bold}
+h4 {
+  margin: 0;
+  padding: 1em 0 0 72px;
+}
+.navegacion select {
+  background: transparent;
+  width: 100%;
+  border-left-style: none;
+  border-right-style: none;
+}
+.navegacion select:focus {
+  background-color: white;
+  box-shadow: 2px 2px 1px grey
+}
+/* Cuando la ventana es angosta, las secciones se despliegan con un menú de
+ * hamburguesa. */
+@media only screen and (max-width: 839px) {
+  .navegacion {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: 3;
+  }
+  #menu {display: inline-block}
+  /* El cajón del menú se oculta.*/ 
+  .navegacion .cajon {
+    display: none;
+  }
+  /* Al pasar el mouse al sobre la navegación se despliega el cajón. */
+  .navegacion:hover {
+    width: 15em;
+    bottom: 0;
+    height: auto;
+    overflow: auto;
+  }
+  .navegacion:hover .cajon {
+    display: block;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 5px;
+    box-shadow: 3px 0 7px black
+  }
+}

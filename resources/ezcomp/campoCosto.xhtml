@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:ezcomp="http://xmlns.jcp.org/jsf/composite/ezcomp">
+  <cc:interface shortDescription="Campo de captura para nombres.">
+    <cc:attribute name="name" default="costo" type="java.lang.String"
+                  shortDescription="id y name del campo de texto."/>
+  </cc:interface>
+  <cc:implementation>
+    <ezcomp:campoTexto name="#{cc.attrs.name}" label="Costo" accesskey="N"
+                       maxlength="255"/>
+  </cc:implementation>
+</html>

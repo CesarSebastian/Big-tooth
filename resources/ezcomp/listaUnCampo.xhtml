@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:ezcomp="http://xmlns.jcp.org/jsf/composite/ezcomp">
+  <cc:interface shortDescription="Lista de 2 campo.">
+    <cc:attribute name="alt" default="No hay datos registrados."
+                  type="java.lang.String" shortDescription=
+                  "Mensaje cuando el listado no tiene elementos."/>
+  </cc:interface>
+  <cc:implementation>
+    <ul id="lista">
+      <li class="elemento">
+        <a class="campos" href="javascript:;">
+          <span class="campo1"></span>
+        </a>
+      </li>
+      <ezcomp:vacio alt="#{cc.attrs.alt}"/>
+    </ul>
+  </cc:implementation>
+</html>

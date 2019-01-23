@@ -1,0 +1,22 @@
+/* Copyright 2016 Gilberto Pacheco Gallegos Licensed under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License. */
+@CHARSET "UTF-8";
+.fab {
+  padding: 16px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,.14),
+    0 1px 18px 0 rgba(0,0,0,.12),
+    0 3px 5px -1px rgba(0,0,0,.2);
+  font-size: 24px;
+  height: 56px;
+  min-width: 56px;
+  width: 56px;
+}
